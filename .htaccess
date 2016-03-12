@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteBase /AnswerMe/
+RewriteCond %{REQUEST_FILENAME} /AnswerMe/
+RewriteRule !route.php route.php
