@@ -1,0 +1,51 @@
+#content > label {
+    margin-left: 16px;
+}
+
+#content > label[for="password"],
+#content > label[for="tagname"],
+#content > label[for="statename"] {
+    position: relative;
+    top: 24px;
+}
+
+#content > label[for="tagname"] { left: 128px; }
+#content > label[for="statename"] { left: 128px; }
+
+#password, #tagname, #statename {
+    margin: 16px;
+    margin-top: 8px;
+    padding: 4px 8px;
+    font-size: 14pt;
+    font-weight: 400;
+    font-family: "Palanquin", sans-serif;
+    width: 60%;
+    float: right;
+}
+
+#loginbtn, #createbtn {
+    display: inline-block;
+    padding: 8px 64px;
+    margin-right: 16px;
+    float: right;
+    clear:both;
+}
+
+fieldset {
+    border: 1px solid #A0A0A0;
+    border-radius: 8px;
+    margin: 32px;
+    padding: 32px;
+    width: calc( 50% - 64px );
+    float: left;
+}
+
+fieldset .button {
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+fieldset .button:last-child {
+    margin-bottom: 0;
+}

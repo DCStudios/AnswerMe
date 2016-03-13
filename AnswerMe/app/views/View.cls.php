@@ -8,11 +8,14 @@
         protected $title;
         
         public function __construct( $title="New View", $model=NULL ) {
-            $this->model = $model;
+            $this->setModel( $model );
             $this->styles = array();
             $this->scripts = array();
             $this->title = $title;
         }
+        
+        public function getModel() { return $this->model; }
+        public function setModel( $m ) { $this->model = $m; }
         
         public function addStyle( $styleLink ) {
             array_push( $this->styles, $styleLink );
@@ -38,7 +41,7 @@
         <link rel="shortcut icon" href="/AnswerMe/medias/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/AnswerMe/medias/favicon.ico" type="image/x-icon">
         <?php foreach( $this->styles as $style ) echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$style\">"; ?>
-        <?php foreach( $this->scripts as $script ) echo "<script type=\"text/javascript\" href=\"$script\"></script>"; ?>
+        <?php foreach( $this->scripts as $script ) echo "<script type=\"text/javascript\" src=\"$script\"></script>"; ?>
     </head>
         <?php
         }

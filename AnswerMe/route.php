@@ -45,7 +45,7 @@
         if( $request[0] == "" ) $controllerFilename = "Home";
         else {
             $controllerFilename = ucfirst( strtolower( $request[0] ) );
-            if( !file_exists( __DIR__ . "/application/controllers/$controllerFilename.ctl.php" ) ) {
+            if( !file_exists( __DIR__ . "/app/controllers/$controllerFilename.ctl.php" ) ) {
                 echo __DIR__ . "/controllers/$controllerFilename.ctl.php";
                 $controllerFilename = "Home";
             }
@@ -64,19 +64,11 @@
         $arguments = array();
         for( $i=2; $i<count( $request ); $i++ ) array_push( $arguments, $request[ $i ] );
         
-        /*
-        
         // Finally, we import the controller, instanciate it, and call the action.
-        require_once __DIR__ . "/application/controllers/$controllerFilename.ctl.php";
+        require_once __DIR__ . "/app/controllers/$controllerFilename.ctl.php";
         $ctl = new $controller();
         if( is_callable( array( $ctl, $action ) ) ) $ctl->$action( $arguments );
         else $ctl->index( $arguments );
-        
-        */
-        
-        require_once __DIR__ . "/app/views/Debug.view.php";
-        $view = new DebugView( "Main" );
-        $view->generate();
     }
-
+    
 ?>
